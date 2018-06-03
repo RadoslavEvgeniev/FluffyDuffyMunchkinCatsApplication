@@ -36,7 +36,7 @@
             <br/>
             <input type="submit" value="Create Cat">
         </form>
-        <a href="/">Back to Home</a>
+        <a href="/">Back To Home</a>
     </div>
 </body>
 </html>

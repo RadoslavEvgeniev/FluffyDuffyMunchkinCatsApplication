@@ -14,9 +14,9 @@
     <h1>Welcome to Fluffy Duffy Munchkin Cats! :)</h1>
     <h3>Navigate trough the application using the links below!</h3>
     <div>
-        <a href="/cats/create">Create cat</a>
+        <a href="/cats/create">Create Cat</a>
         <br/>
-        <a href="/cats/all">All cats</a>
+        <a href="/cats/all">All Cats</a>
     </div>
 </body>
 </html>

@@ -20,6 +20,6 @@
     <%} else {%>
         <h1>Cat, with name - <%=request.getQueryString().split("=")[1]%> was not found.</h1>
     <%}%>
-    <a href="/cats/all"></a>
+    <a href="/cats/all">Back To Cats</a>
 </body>
 </html>

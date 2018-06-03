@@ -1,4 +1,5 @@
-<%--
+<%@ page import="app.models.Cat" %>
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: Rado
   Date: 3.6.2018 г.
@@ -12,7 +13,16 @@
 </head>
 <body>
     <h1>All Cats</h1>
-
-    <a href="/"> Back to home</a>
+    <%Map<String, Cat> cats = (Map<String, Cat>) request.getAttribute("cats");%>
+    <%if (cats == null) {%>
+        <h3>There are no cats. <a href="/cats/create">Create Some!</a></h3>
+    <%} else {%>
+        <%for (Cat cat : cats.values()) {%>
+            <%String link = "/cats/profile?catName=" + cat.getName();%>
+            <h3><a href="<%=link%>"><%=cat.getName()%></a></h3>
+            <br/>
+        <%}%>
+    <%}%>
+    <a href="/"> Back To Home</a>
 </body>
 </html>
