@@ -24,6 +24,7 @@ public class CreateServlet extends HttpServlet {
         String catColor = req.getParameter("cat_color");
         int numberOfLegs = Integer.parseInt(req.getParameter("cat_legs"));
         Cat cat = new Cat(catName, catBreed, catColor, numberOfLegs);
-        super.doPost(req, resp);
+        this.getServletConfig().getServletContext().setAttribute(catName, cat);
+        resp.sendRedirect("/cats/profile?catName=" + cat.getName());
     }
 }

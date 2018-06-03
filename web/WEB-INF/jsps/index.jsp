@@ -15,6 +15,8 @@
     <h3>Navigate trough the application using the links below!</h3>
     <div>
         <a href="/cats/create">Create cat</a>
+        <br/>
+        <a href="/cats/all">All cats</a>
     </div>
 </body>
 </html>
