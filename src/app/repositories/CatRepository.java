@@ -29,6 +29,6 @@ public class CatRepository {
             return null;
         }
 
-        return new HashSet<>(this.cats.values());
+        return new LinkedHashSet<>(this.cats.values());
     }
 }

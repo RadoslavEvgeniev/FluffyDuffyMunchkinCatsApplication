@@ -12,6 +12,10 @@ public class UsersProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getSession().getAttribute("loggedInUser") == null) {
+            resp.sendRedirect("/");
+            return;
+        }
         req.getRequestDispatcher("/WEB-INF/jsps/users/profile.jsp").forward(req, resp);
     }
 }

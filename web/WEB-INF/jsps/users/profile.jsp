@@ -15,6 +15,7 @@
     <%if (loggedInUser != null) {%>
         <h1>User - <%=loggedInUser.getUsername()%></h1>
         <h3>Registered on - <%=String.valueOf(loggedInUser.getRegistrationDate())%></h3>
+        <h3>Role - <%=loggedInUser.getRole()%></h3>
     <%}%>
 </body>
 </html>

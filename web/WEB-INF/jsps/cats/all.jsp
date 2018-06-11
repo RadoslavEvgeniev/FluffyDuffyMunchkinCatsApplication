@@ -2,6 +2,8 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Set" %>
 <%@ page import="app.repositories.CatRepository" %>
+<%@ page import="java.util.Comparator" %>
+<%@ page import="java.util.stream.Collectors" %>
 <%--
   Created by IntelliJ IDEA.
   User: Rado
@@ -22,7 +24,7 @@
     <%} else {%>
         <%for (Cat cat : cats) {%>
             <%String link = "/cats/profile?catName=" + cat.getName();%>
-            <h3><a href="<%=link%>"><%=cat.getName()%></a></h3>
+            <div><a href="<%=link%>"><%=cat.getName()%></a></div>
             <br/>
         <%}%>
     <%}%>
