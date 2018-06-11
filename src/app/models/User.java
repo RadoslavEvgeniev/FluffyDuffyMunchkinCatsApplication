@@ -20,7 +20,7 @@ public class User {
         return this.username;
     }
 
-    public void setUsername(String username) {
+    private void setUsername(String username) {
         this.username = username;
     }
 
@@ -28,7 +28,7 @@ public class User {
         return this.password;
     }
 
-    public void setPassword(String password) {
+    private void setPassword(String password) {
         this.password = password;
     }
 
@@ -36,7 +36,7 @@ public class User {
         return this.registrationDate;
     }
 
-    public void setRegistrationDate(LocalDate registrationDate) {
+    private void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
 
@@ -44,7 +44,7 @@ public class User {
         return this.role;
     }
 
-    public void setRole(String role) {
+    private void setRole(String role) {
         this.role = role;
     }
 }

@@ -53,7 +53,7 @@ public class Cat {
         return this.creator;
     }
 
-    public void setCreator(User creator) {
+    private void setCreator(User creator) {
         this.creator = creator;
     }
 

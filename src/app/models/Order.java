@@ -22,7 +22,7 @@ public class Order {
         return this.id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -30,7 +30,7 @@ public class Order {
         return this.client;
     }
 
-    public void setClient(User client) {
+    private void setClient(User client) {
         this.client = client;
     }
 
@@ -38,7 +38,7 @@ public class Order {
         return this.cat;
     }
 
-    public void setCat(Cat cat) {
+    private void setCat(Cat cat) {
         this.cat = cat;
     }
 
@@ -46,7 +46,7 @@ public class Order {
         return this.madeOn;
     }
 
-    public void setMadeOn(LocalDateTime madeOn) {
+    private void setMadeOn(LocalDateTime madeOn) {
         this.madeOn = madeOn;
     }
 }
