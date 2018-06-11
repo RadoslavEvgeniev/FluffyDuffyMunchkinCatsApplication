@@ -6,12 +6,14 @@ public class Cat {
     private String breed;
     private String color;
     private int numberOfLegs;
+    private User creator;
 
-    public Cat(String name, String breed, String color, int numberOfLegs) {
+    public Cat(String name, String breed, String color, int numberOfLegs, User user) {
         this.setName(name);
         this.setBreed(breed);
         this.setColor(color);
         this.setNumberOfLegs(numberOfLegs);
+        this.setCreator(user);
     }
 
     public String getName() {
@@ -44,5 +46,13 @@ public class Cat {
 
     private void setNumberOfLegs(int numberOfLegs) {
         this.numberOfLegs = numberOfLegs;
+    }
+
+    public User getCreator() {
+        return this.creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
     }
 }

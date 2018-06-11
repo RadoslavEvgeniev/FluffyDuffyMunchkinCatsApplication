@@ -19,6 +19,7 @@
         <h3>Breed - <%=cat.getBreed()%></h3>
         <h3>Color - <%=cat.getColor()%></h3>
         <h3>Number of legs - <%=cat.getNumberOfLegs()%></h3>
+        <h3>Creator - <%=cat.getCreator().getUsername()%></h3>
     <%} else {%>
         <h1>Cat, with name - <%=catName%> was not found.</h1>
     <%}%>

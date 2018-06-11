@@ -1,7 +1,9 @@
 package app.servlets.catsServlets;
 
 import app.models.Cat;
+import app.models.User;
 import app.repositories.CatRepository;
+import app.repositories.UserRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +27,8 @@ public class CatsCreateServlet extends HttpServlet {
         String catBreed = req.getParameter("cat_breed");
         String catColor = req.getParameter("cat_color");
         int numberOfLegs = Integer.parseInt(req.getParameter("cat_legs"));
-        Cat cat = new Cat(catName, catBreed, catColor, numberOfLegs);
+        User creator = (User) req.getSession().getAttribute("loggedInUser");
+        Cat cat = new Cat(catName, catBreed, catColor, numberOfLegs, creator);
 
         ((CatRepository)this.getServletContext().getAttribute("catRepository")).addCat(cat);
         resp.sendRedirect("/cats/profile?catName=" + cat.getName());
