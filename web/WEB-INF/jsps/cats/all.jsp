@@ -1,5 +1,8 @@
 <%@ page import="app.models.Cat" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="app.repositories.CatRepository" %>
+<%--
   Created by IntelliJ IDEA.
   User: Rado
   Date: 3.6.2018 г.
@@ -13,11 +16,11 @@
 </head>
 <body>
     <h1>All Cats</h1>
-    <%Map<String, Cat> cats = (Map<String, Cat>) request.getAttribute("cats");%>
+    <%Set<Cat> cats = ((CatRepository)application.getAttribute("catRepository")).findAllCats();%>
     <%if (cats == null) {%>
         <h3>There are no cats. <a href="/cats/create">Create Some!</a></h3>
     <%} else {%>
-        <%for (Cat cat : cats.values()) {%>
+        <%for (Cat cat : cats) {%>
             <%String link = "/cats/profile?catName=" + cat.getName();%>
             <h3><a href="<%=link%>"><%=cat.getName()%></a></h3>
             <br/>

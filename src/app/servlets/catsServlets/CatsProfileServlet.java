@@ -1,4 +1,4 @@
-package app.servlets;
+package app.servlets.catsServlets;
 
 import app.models.Cat;
 
@@ -11,14 +11,11 @@ import java.io.IOException;
 import java.util.Map;
 
 @WebServlet("/cats/profile")
-public class ProfileServlet extends HttpServlet {
+public class CatsProfileServlet extends HttpServlet {
 
     @Override
     @SuppressWarnings("unchecked")
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Map<String, Cat> allCats = (Map<String, Cat>) this.getServletConfig().getServletContext().getAttribute("cats");
-        Cat currentCat = allCats.get(req.getQueryString().split("=")[1]);
-        req.setAttribute("currentCat", currentCat);
-        req.getRequestDispatcher("/WEB-INF/jsps/profile.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsps/cats/profile.jsp").forward(req, resp);
     }
 }

@@ -1,4 +1,4 @@
-package app.servlets;
+package app.servlets.catsServlets;
 
 import app.models.Cat;
 
@@ -11,13 +11,11 @@ import java.io.IOException;
 import java.util.Map;
 
 @WebServlet("/cats/all")
-public class AllServlet extends HttpServlet {
+public class CatsAllServlet extends HttpServlet {
 
     @Override
     @SuppressWarnings("unchecked")
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Map<String, Cat> cats = (Map<String, Cat>) this.getServletConfig().getServletContext().getAttribute("cats");
-        req.setAttribute("cats", cats);
-        req.getRequestDispatcher("/WEB-INF/jsps/all.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsps/cats/all.jsp").forward(req, resp);
     }
 }
