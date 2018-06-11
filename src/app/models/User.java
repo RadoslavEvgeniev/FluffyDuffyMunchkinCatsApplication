@@ -1,18 +1,19 @@
 package app.models;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class User {
 
     private String username;
     private String password;
     private LocalDate registrationDate;
+    private String role;
 
-    public User(String username, String password) {
+    public User(String username, String password, String role) {
         this.setUsername(username);
         this.setPassword(password);
         this.setRegistrationDate(LocalDate.now());
+        this.setRole(role);
     }
 
     public String getUsername() {
@@ -37,5 +38,13 @@ public class User {
 
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public String getRole() {
+        return this.role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

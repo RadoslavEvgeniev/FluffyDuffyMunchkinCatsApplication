@@ -3,7 +3,6 @@ package app.servlets.catsServlets;
 import app.models.Cat;
 import app.models.User;
 import app.repositories.CatRepository;
-import app.repositories.UserRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +16,10 @@ public class CatsCreateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (!((User) req.getSession().getAttribute("loggedInUser")).getRole().equals("ADMIN")) {
+            resp.sendRedirect("/");
+            return;
+        }
         req.getRequestDispatcher("/WEB-INF/jsps/cats/create.jsp").forward(req, resp);
     }
 

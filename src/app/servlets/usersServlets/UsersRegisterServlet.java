@@ -23,13 +23,14 @@ public class UsersRegisterServlet extends HttpServlet {
         String username = req.getParameter("user_name");
         String password = req.getParameter("user_password");
         String confirmPassword = req.getParameter("confirm_password");
+        String role = req.getParameter("user_role");
 
         if (!confirmPassword.equals(password)) {
             resp.sendRedirect("/users/register");
             return;
         }
 
-        User user = new User(username, password);
+        User user = new User(username, password, role);
         try {
             ((UserRepository)this.getServletContext().getAttribute("userRepository")).addUser(user);
         } catch (IllegalArgumentException iae) {

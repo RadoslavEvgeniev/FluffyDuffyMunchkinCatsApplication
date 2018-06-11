@@ -28,6 +28,14 @@
             <input type="password" id="confirmPassword" name="confirm_password">
         </label>
         <br/>
+        <label for="role">
+            Role:
+            <select name="user_role" id="role">
+                <option value="ADMIN">Admin</option>
+                <option value="USER">User</option>
+            </select>
+        </label>
+        <br/>
         <input type="submit" value="Register">
     </form>
     <a href="/">Back To Home</a>
