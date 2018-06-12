@@ -25,11 +25,16 @@
             <br/>
             <a href="/users/logout">Logout</a>
             <br/>
+            <a href="/cats/all">All Cats</a>
+            <br/>
             <%if (loggedInUser.getRole().equals("ADMIN")) {%>
                 <a href="/cats/create">Create Cat</a>
                 <br/>
+                <form action="/orders/all" method="get">
+                    <button type="submit">Orders</button>
+                </form>
             <%}%>
-            <a href="/cats/all">All Cats</a>
+
         <%}%>
     </div>
 </body>

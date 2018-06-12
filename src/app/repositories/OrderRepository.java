@@ -3,7 +3,9 @@ package app.repositories;
 import app.models.Order;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class OrderRepository {
 
@@ -15,5 +17,9 @@ public class OrderRepository {
 
     public void addOrder(Order order) {
         this.orders.putIfAbsent(order.getId(), order);
+    }
+
+    public Set<Order> findAllOrders() {
+        return new HashSet<>(this.orders.values());
     }
 }
