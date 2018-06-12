@@ -3,6 +3,7 @@ package app.repositories;
 import app.models.Cat;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CatRepository {
 
@@ -28,7 +29,7 @@ public class CatRepository {
         if (this.cats.size() == 0) {
             return null;
         }
-
-        return new LinkedHashSet<>(this.cats.values());
+        Set<Cat> orderedCats = this.cats.values().stream().sorted(Comparator.comparingInt(Cat::getViews).reversed()).collect(Collectors.toSet());
+        return orderedCats;
     }
 }

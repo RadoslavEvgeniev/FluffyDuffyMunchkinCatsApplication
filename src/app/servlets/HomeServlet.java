@@ -2,6 +2,7 @@ package app.servlets;
 
 import app.models.Cat;
 import app.repositories.CatRepository;
+import app.repositories.OrderRepository;
 import app.repositories.UserRepository;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ public class HomeServlet extends HttpServlet {
     public void init() throws ServletException {
         this.getServletContext().setAttribute("catRepository", new CatRepository());
         this.getServletContext().setAttribute("userRepository", new UserRepository());
+        this.getServletContext().setAttribute("orderRepository", new OrderRepository());
     }
 
     @Override

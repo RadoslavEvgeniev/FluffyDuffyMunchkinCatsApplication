@@ -64,4 +64,8 @@ public class Cat {
     public void setViews(int views) {
         this.views = views;
     }
+
+    public void incrementViews() {
+        this.views++;
+    }
 }
